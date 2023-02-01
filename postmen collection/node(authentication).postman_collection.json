@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "289d649b-43b8-496c-99bc-ab2d1785c213",
+		"name": "node(authentication)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User:register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "metauser",
+							"type": "default"
+						},
+						{
+							"key": "lastName",
+							"value": "modi",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "metauser@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "metaUser@123",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Api_url}}/api/auth/signup",
+					"host": [
+						"{{Api_url}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User: login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "metauser@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "metaUser@123",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Api_url}}/api/auth/signin",
+					"host": [
+						"{{Api_url}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User: Signout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZDkwOTFkZDFjNmQ2MTZmMGQ4ZjM4OSIsImlhdCI6MTY3NTE3MTkxOSwiZXhwIjoxNjc1Nzc2NzE5fQ.4uql0GP7PnYGKxx1kh93j-FnXgTWyYn6WhZj6eFO8i0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZDkwOTFkZDFjNmQ2MTZmMGQ4ZjM4OSIsImlhdCI6MTY3NTE3MTkxOSwiZXhwIjoxNjc1Nzc2NzE5fQ.4uql0GP7PnYGKxx1kh93j-FnXgTWyYn6WhZj6eFO8i0",
+							"type": "default",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Api_url}}/api/auth/signout",
+					"host": [
+						"{{Api_url}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User:viewUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZDkwOTFkZDFjNmQ2MTZmMGQ4ZjM4OSIsImlhdCI6MTY3NTE3MTkxOSwiZXhwIjoxNjc1Nzc2NzE5fQ.4uql0GP7PnYGKxx1kh93j-FnXgTWyYn6WhZj6eFO8i0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "63d9091dd1c6d616f0d8f389",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Api_url}}/api/user/view",
+					"host": [
+						"{{Api_url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"view"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user: random-joke",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Api_url}}/api/random-joke",
+					"host": [
+						"{{Api_url}}"
+					],
+					"path": [
+						"api",
+						"random-joke"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User: random-joke-category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "category",
+							"value": "animal",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Api_url}}/api/random-joke-category",
+					"host": [
+						"{{Api_url}}"
+					],
+					"path": [
+						"api",
+						"random-joke-category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User: random-joke-categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Api_url}}/api/random-joke-categories",
+					"host": [
+						"{{Api_url}}"
+					],
+					"path": [
+						"api",
+						"random-joke-categories"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Api_url",
+			"value": "http://localhost:3001",
+			"type": "default"
+		}
+	]
+}
